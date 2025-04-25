@@ -3,16 +3,21 @@
 
 // EXEMPLO DE EXECUÇÃO
 
-int main(){
 
-    // Declara a struct "info", recebendo o retorno da função
-    struct dados_pedido info = registrar_pedido(); 
 
-    // Printar as informações do pedido
-    printf("\n--- DADOS DO PEDIDO ---\n");
-    printf("Prato: %s (x%d)\n", info.prato, info.qtd_prato);
-    printf("Bebida: %s (x%d)\n", info.bebida, info.qtd_bebida);
-    printf("Subtotal: R$%.2f\n", info.subtotal);
-    
+int main() {
+    // Simulando valores vindos de outra parte do sistema
+    int mesa = 3;
+    char prato[] = "Lasanha";
+    int qtd_prato = 2;
+    char bebida[] = "Suco de laranja";
+    int qtd_bebida = 1;
+
+    // Registrar o pedido
+    struct dados_pedido p = registrar_pedido(mesa, prato, qtd_prato, bebida, qtd_bebida);
+
+    // Apenas exibindo como teste
+    printf("Pedido registrado com sucesso!\n");
+
     return 0;
 }

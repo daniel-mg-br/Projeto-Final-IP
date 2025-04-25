@@ -3,6 +3,7 @@
 #pragma once
 
 struct dados_pedido {
+    int mesa;
     char prato[50];
     int qtd_prato;
     char bebida[50];
@@ -11,3 +12,7 @@ struct dados_pedido {
 };
 
 struct dados_pedido registrar_pedido();
+
+void mid_line();
+
+void top_bottom();
