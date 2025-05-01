@@ -11,7 +11,11 @@ struct dados_pedido {
     float subtotal;
 };
 
-struct dados_pedido registrar_pedido();
+struct dados_pedido registrar_pedido(int mesa, char prato[], int qtd_prato, char bebida[], int qtd_bebida);
+
+void exibir_pedido(struct dados_pedido info);
+
+void exibir_resumo(struct dados_pedido pedidos[], int num_pedidos);
 
 void mid_line();
 

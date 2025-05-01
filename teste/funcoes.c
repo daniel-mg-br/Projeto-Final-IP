@@ -32,3 +32,25 @@ struct dados_pedido registrar_pedido(int mesa, char prato[], int qtd_prato, char
 
     return info;
 }
+
+void exibir_pedido(struct dados_pedido info){
+    printf("Mesa: %d\n", info.mesa);
+    printf("Prato: %s (x%d)\n", info.prato, info.qtd_prato);
+    printf("Bebida: %s (x%d)\n", info.bebida, info.qtd_bebida);
+    printf("Subtotal: R$%.2f\n", info.subtotal);
+    mid_line();
+}
+
+void exibir_resumo(struct dados_pedido pedidos[], int num_pedidos){
+    float total_geral = 0;
+
+    printf("\n === RESUMO FINAL DOS PEDIDOS === \n");
+
+    for (int i=0; i<num_pedidos; i++){
+        exibir_pedido(pedidos[i]);
+        total_geral += pedidos[i].subtotal;
+    }
+
+    printf("TOTAL GERAL: R$%.2f\n", total_geral);
+    top_bottom();
+}
