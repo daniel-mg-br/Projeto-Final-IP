@@ -2,32 +2,43 @@
 
 #pragma once
 
-// Define o nome do arquivo binário usado
-
 #define ARQUIVO_BINARIO "pedidos.bin"
-
-// Estrutura que representa um pedido feito
 
 struct dados_pedido {
     int mesa;
-    char prato[50];
-    int qtd_prato;
-    char bebida[50];
-    int qtd_bebida;
+    int pessoas;
+    char item[50];   // Nome do item
+    int tipo;        // Comida (1) ou bebida (2)
+    int quantidade;
     float subtotal;
+    float valor_individual;
 };
 
-// Protótipos das funções
+// Registra o pedido e salva no arquivo
 
-struct dados_pedido registrar_pedido(int mesa, char prato[], int qtd_prato, char bebida[], int qtd_bebida);
+void registrar_e_salvar(
+    struct dados_pedido *vetor,
+    int *total_pedidos,
+    int mesa,
+    int pessoas,
+    char item[],
+    int tipo,
+    int qtd_item
+);
+
+// Lê o arquivo e preenche o vetor
+
+int carregar_pedidos(struct dados_pedido vetor[], int *total_pedidos);
+
+// Exibe um pedido individual
 
 void exibir_pedido(struct dados_pedido info);
 
+// Exibe todos os pedidos + valor total
+
 void exibir_resumo(struct dados_pedido pedidos[], int num_pedidos);
 
-void salvar_pedidos(struct dados_pedido pedidos[], int num_pedidos);
-
-int carregar_pedidos(struct dados_pedido pedidos[], int max_pedidos);
+void gerar_relatorio_final();
 
 void mid_line();
 
