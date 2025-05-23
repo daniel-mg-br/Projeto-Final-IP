@@ -74,7 +74,7 @@ int main() {
             exibir_pedido(pedidos[i]);
             total_mesa += pedidos[i].subtotal;
         }
-        printf("TOTAL DA MESA %d: R$%.2f\n", mesa, total_mesa);
+        printf("TOTAL DA MESA %d: R$%.2f | VALOR POR PESSOA: R$%.2f\n", mesa, total_mesa, total_mesa / pessoas);
         top_bottom();
 
         printf("Deseja registrar pedidos de outra mesa? (s/n): ");

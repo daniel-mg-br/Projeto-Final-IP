@@ -34,11 +34,19 @@ int carregar_pedidos(struct dados_pedido vetor[], int *total_pedidos);
 
 void exibir_pedido(struct dados_pedido info);
 
-// Exibe todos os pedidos + valor total
+// Relatório, resumo e estatísticas
 
 void exibir_resumo(struct dados_pedido pedidos[], int num_pedidos);
 
 void gerar_relatorio_final();
+
+void calcular_metricas_gerais(struct dados_pedido pedidos[], int total_pedidos);
+
+void calcular_subtotal_por_tipo(struct dados_pedido pedidos[], int total_pedidos);
+
+void gerar_ranking(struct dados_pedido pedidos[], int total_pedidos);
+
+// Estética
 
 void mid_line();
 
